@@ -114,10 +114,12 @@ describe('ChuangmiPlug212a01Platform', () => {
 
     const platform = new ChuangmiPlug212a01Platform(mockMatterbridge, mockLog, validConfig, client);
     setMatterNode(platform);
+    const registerDeviceSpy = jest.spyOn(platform, 'registerDevice').mockImplementation(async (_device: MatterbridgeEndpoint) => {});
+
     await platform.onStart('Jest');
     await platform.onShutdown('Jest');
 
-    expect(platform.getDevices()).toHaveLength(1);
+    expect(registerDeviceSpy).toHaveBeenCalledTimes(1);
     expect(platform.getRegisteredPowerStateForTest()).toBe(true);
   });
 });

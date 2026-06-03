@@ -94,7 +94,6 @@ export class ChuangmiPlug212a01Platform extends MatterbridgeDynamicPlatform {
       outlet.createDefaultElectricalPowerMeasurementClusterServer(null, null, null, null);
     }
 
-    void this.setOnOffAttribute(outlet, currentPower);
     return outlet;
   }
 
