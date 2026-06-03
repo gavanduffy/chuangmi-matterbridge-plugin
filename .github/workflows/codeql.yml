@@ -3,18 +3,18 @@
 name: CodeQL
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - 'screenshots/**' # any file under screenshots/
-      - 'scripts/**' # any file under scripts/
-      - '**/*.md' # any .md anywhere
-  pull_request:
-    branches: [main]
-    paths-ignore:
-      - 'screenshots/**' # any file under screenshots/
-      - 'scripts/**' # any file under scripts/
-      - '**/*.md' # any .md anywhere
+#  push:
+ #   branches: [main]
+  #  paths-ignore:
+   #   - 'screenshots/**' # any file under screenshots/
+    #  - 'scripts/**' # any file under scripts/
+     # - '**/*.md' # any .md anywhere
+#  pull_request:
+ #   branches: [main]
+  #  paths-ignore:
+   #   - 'screenshots/**' # any file under screenshots/
+    #  - 'scripts/**' # any file under scripts/
+     # - '**/*.md' # any .md anywhere
   workflow_dispatch:
 
 jobs:

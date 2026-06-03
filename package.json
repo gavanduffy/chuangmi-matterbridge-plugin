@@ -1,17 +1,17 @@
 {
-  "name": "matterbridge-plugin-template",
+  "name": "matterbridge-chuangmi-plug-212a01",
   "version": "1.0.22",
-  "description": "Matterbridge Template Plugin",
+  "description": "Matterbridge plugin for Xiaomi chuangmi.plug.212a01 / Mi Smart Power Plug 2",
   "author": "https://github.com/Luligu",
   "license": "Apache-2.0",
-  "homepage": "https://www.npmjs.com/package/matterbridge-plugin-template",
+  "homepage": "https://github.com/local/matterbridge-chuangmi-plug-212a01",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Luligu/matterbridge-plugin-template.git"
+    "url": "git+https://github.com/local/matterbridge-chuangmi-plug-212a01.git"
   },
   "bugs": {
-    "url": "https://github.com/Luligu/matterbridge-plugin-template/issues"
+    "url": "https://github.com/local/matterbridge-chuangmi-plug-212a01/issues"
   },
   "funding": {
     "type": "buymeacoffee",
@@ -20,7 +20,10 @@
   "keywords": [
     "matterbridge",
     "plugin",
-    "template",
+    "xiaomi",
+    "miot",
+    "chuangmi",
+    "plug",
     "matter.js",
     "matter-node.js",
     "matter",
@@ -120,6 +123,7 @@
     "matterbridge:list": "matterbridge -list"
   },
   "dependencies": {
+    "miio": "0.15.6",
     "node-ansi-logger": "3.2.1",
     "node-persist-manager": "2.0.2"
   },
@@ -141,6 +145,7 @@
     "eslint-plugin-prettier": "5.5.5",
     "eslint-plugin-simple-import-sort": "13.0.0",
     "jest": "30.4.2",
+    "matterbridge": "^3.7.10",
     "npm-check-updates": "22.2.0",
     "prettier": "3.8.3",
     "shx": "0.4.0",

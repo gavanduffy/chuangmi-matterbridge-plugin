@@ -1,16 +1,17 @@
+
 # Codecov (plugin) v. 2.0.1
 
 name: Codecov
 
 on:
-  push:
-    branches: [main]
-    paths-ignore:
-      - '**/*.md' # any .md anywhere
-  pull_request:
-    branches: [main]
-    paths-ignore:
-      - '**/*.md' # any .md anywhere
+#  push:
+ #   branches: [main]
+ #   paths-ignore:
+ #     - '**/*.md' # any .md anywhere
+  #pull_request:
+   # branches: [main]
+    #paths-ignore:
+   # - '**/*.md' # any .md anywhere
   workflow_dispatch:
 
 jobs:

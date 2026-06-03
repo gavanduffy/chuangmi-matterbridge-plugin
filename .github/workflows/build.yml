@@ -3,12 +3,12 @@
 name: Node.js CI
 
 on:
-  push:
-    paths-ignore:
-      - '**/*.md' # any .md anywhere
-  pull_request:
-    paths-ignore:
-      - '**/*.md' # any .md anywhere
+#%  push:
+#    paths-ignore:
+ #     - '**/*.md' # any .md anywhere
+  #pull_request:
+   ## paths-ignore:
+     # - '**/*.md' # any .md anywhere
   workflow_dispatch:
 
 jobs:
