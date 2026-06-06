@@ -6,8 +6,8 @@ import { AnsiLogger } from 'matterbridge/logger';
 import { VendorId } from 'matterbridge/matter';
 
 import { validateConfig } from '../src/config/schema.js';
-import { ChuangmiPlug212a01Platform } from '../src/module.js';
 import { ChuangmiPlug212a01Client, MiioModule, MiotSetPropertyReference } from '../src/miot/ChuangmiPlug212a01Client.js';
+import { ChuangmiPlug212a01Platform } from '../src/module.js';
 
 const mockLog = {
   fatal: jest.fn(),
@@ -146,10 +146,10 @@ function createClient(response: { code?: number; value?: unknown }[], setCalls: 
 }
 
 function setMatterNode(platform: ChuangmiPlug212a01Platform): void {
-  platform.setMatterNode(
-    mockMatterbridge.addBridgedEndpoint.bind(mockMatterbridge),
-    mockMatterbridge.removeBridgedEndpoint.bind(mockMatterbridge),
-    mockMatterbridge.removeAllBridgedEndpoints.bind(mockMatterbridge),
-    mockMatterbridge.registerVirtualDevice.bind(mockMatterbridge),
+  (platform as any).setMatterNode(
+    (mockMatterbridge as any).addBridgedEndpoint.bind(mockMatterbridge),
+    (mockMatterbridge as any).removeBridgedEndpoint.bind(mockMatterbridge),
+    (mockMatterbridge as any).removeAllBridgedEndpoints.bind(mockMatterbridge),
+    (mockMatterbridge as any).registerVirtualDevice.bind(mockMatterbridge),
   );
 }

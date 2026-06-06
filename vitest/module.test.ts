@@ -10,6 +10,8 @@ describe('validateConfig', () => {
       version: '1.0.0',
       ip: '192.168.1.50',
       token: '0123456789abcdef0123456789abcdef',
+      debug: false,
+      unregisterOnShutdown: false,
     });
 
     expect(config.name).toBe('Xiaomi Plug');

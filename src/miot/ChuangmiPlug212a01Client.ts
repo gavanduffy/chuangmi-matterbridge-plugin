@@ -79,19 +79,19 @@ export class ChuangmiPlug212a01Client {
 
   private async getProperty(reference: MiotPropertyReference): Promise<unknown> {
     const protocol = await this.getProtocol();
-    const response = await this.callMiot(() => protocol.call('get_properties', [reference]), `read siid ${reference.siid} piid ${reference.piid}`);
+    const response = await this.callMiot(async () => protocol.call('get_properties', [reference]), `read siid ${reference.siid} piid ${reference.piid}`);
     return this.extractSuccessfulValue(response, `read siid ${reference.siid} piid ${reference.piid}`);
   }
 
   private async setProperty(reference: MiotSetPropertyReference): Promise<void> {
     const protocol = await this.getProtocol();
-    const response = await this.callMiot(() => protocol.call('set_properties', [reference]), `write siid ${reference.siid} piid ${reference.piid}`);
+    const response = await this.callMiot(async () => protocol.call('set_properties', [reference]), `write siid ${reference.siid} piid ${reference.piid}`);
     this.assertSuccessfulResponse(response, `write siid ${reference.siid} piid ${reference.piid}`);
   }
 
   private async getProtocol(): Promise<MiotProtocol> {
     if (!this.device) {
-      this.device = await this.callMiot(() => this.miioModule.device({ address: this.ip, token: this.token, timeout: this.timeout }), `connect to ${this.ip}`);
+      this.device = await this.callMiot(async () => this.miioModule.device({ address: this.ip, token: this.token, timeout: this.timeout }), `connect to ${this.ip}`);
     }
 
     if (this.device.miioProtocol) {
@@ -109,7 +109,7 @@ export class ChuangmiPlug212a01Client {
     try {
       return await operation();
     } catch (error) {
-      throw new Error(`Failed to ${context}: ${error instanceof Error ? error.message : String(error)}`);
+      throw new Error(`Failed to ${context}: ${error instanceof Error ? error.message : String(error)}`, { cause: error });
     }
   }
 
