@@ -8,13 +8,13 @@ The plugin exposes the plug as a single Matter OnOff Outlet. It uses local Xiaom
 
 ## Supported Mapping
 
-| Matter feature | Xiaomi MIOT property | Status |
-| --- | --- | --- |
-| Outlet on/off read | `siid: 2`, `piid: 1` | Supported |
-| Outlet on/off write | `siid: 2`, `piid: 1` | Supported |
-| Basic information | Xiaomi / Mi Smart Power Plug 2 / chuangmi.plug.212a01 | Supported |
-| Wired power source | Matter power source cluster | Supported |
-| Electric power watts | `siid: 5`, `piid: 6` | Polled/logged only when enabled |
+| Matter feature       | Xiaomi MIOT property                                  | Status                          |
+| -------------------- | ----------------------------------------------------- | ------------------------------- |
+| Outlet on/off read   | `siid: 2`, `piid: 1`                                  | Supported                       |
+| Outlet on/off write  | `siid: 2`, `piid: 1`                                  | Supported                       |
+| Basic information    | Xiaomi / Mi Smart Power Plug 2 / chuangmi.plug.212a01 | Supported                       |
+| Wired power source   | Matter power source cluster                           | Supported                       |
+| Electric power watts | `siid: 5`, `piid: 6`                                  | Polled/logged only when enabled |
 
 LED indicator and timer/countdown MIOT features are intentionally not exposed.
 

@@ -4,6 +4,14 @@ import { AnsiLogger, LogLevel } from 'matterbridge/logger';
 import { ChuangmiPlug212a01Config, validateConfig } from './config/schema.js';
 import { CHUANGMI_PLUG_212A01, ChuangmiPlug212a01Client } from './miot/ChuangmiPlug212a01Client.js';
 
+/**
+ * Initializes the Chuangmi Plug plugin.
+ *
+ * @param {PlatformMatterbridge} matterbridge The Matterbridge platform instance.
+ * @param {AnsiLogger} log The logger.
+ * @param {PlatformConfig} config The platform configuration.
+ * @returns {ChuangmiPlug212a01Platform} The initialized platform instance.
+ */
 export default function initializePlugin(matterbridge: PlatformMatterbridge, log: AnsiLogger, config: PlatformConfig): ChuangmiPlug212a01Platform {
   return new ChuangmiPlug212a01Platform(matterbridge, log, config);
 }
@@ -44,6 +52,7 @@ export class ChuangmiPlug212a01Platform extends MatterbridgeDynamicPlatform {
 
   override async onChangeLoggerLevel(logLevel: LogLevel): Promise<void> {
     this.log.info(`onChangeLoggerLevel called with: ${logLevel}`);
+    await Promise.resolve();
   }
 
   override async onShutdown(reason?: string): Promise<void> {
