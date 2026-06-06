@@ -50,9 +50,9 @@ export class ChuangmiPlug212a01Platform extends MatterbridgeDynamicPlatform {
     await super.onConfigure();
   }
 
+  // eslint-disable-next-line @typescript-eslint/require-await
   override async onChangeLoggerLevel(logLevel: LogLevel): Promise<void> {
     this.log.info(`onChangeLoggerLevel called with: ${logLevel}`);
-    await Promise.resolve();
   }
 
   override async onShutdown(reason?: string): Promise<void> {
